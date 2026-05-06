@@ -1,0 +1,382 @@
+/* ========== Page Content Styles ========== */
+
+.page-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  color: #181b18;
+  font-weight: 700;
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  color: #4a554a;
+  margin: 0;
+}
+
+.page-content {
+  background: #fffffb;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 2px 8px rgba(30, 54, 31, 0.05);
+}
+
+/* ========== Guideline & Policy Content ========== */
+
+.guideline-content,
+.policy-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.guideline-section,
+.policy-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.guideline-section h2,
+.policy-section h2 {
+  font-size: 1.5rem;
+  color: #181b18;
+  margin: 0;
+  font-weight: 700;
+  border-bottom: 2px solid #0f7b46;
+  padding-bottom: 12px;
+}
+
+.guideline-section h3,
+.policy-section h3 {
+  font-size: 1.2rem;
+  color: #28458b;
+  margin: 16px 0 8px 0;
+  font-weight: 600;
+}
+
+.guideline-section p,
+.policy-section p {
+  margin: 0;
+  color: #4a554a;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.guideline-section ul,
+.policy-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.guideline-section li,
+.policy-section li {
+  padding-left: 24px;
+  position: relative;
+  color: #4a554a;
+  line-height: 1.6;
+}
+
+.guideline-section li:before,
+.policy-section li:before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #0f7b46;
+  font-weight: bold;
+}
+
+.guideline-section ol {
+  list-style: decimal;
+  padding-left: 24px;
+  margin: 0;
+  color: #4a554a;
+}
+
+.guideline-section ol li,
+.policy-section ol li {
+  padding-left: 12px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.shipping-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 0.95rem;
+}
+
+.shipping-table th,
+.shipping-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #d7decf;
+}
+
+.shipping-table th {
+  background-color: #0f7b46;
+  color: white;
+  font-weight: 600;
+}
+
+.shipping-table tr:hover {
+  background-color: #eef1ea;
+}
+
+/* ========== Blog Grid ========== */
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.blog-card {
+  background: white;
+  border: 1px solid #d7decf;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.blog-card:hover {
+  border-color: #0f7b46;
+  box-shadow: 0 8px 24px rgba(15, 123, 70, 0.12);
+  transform: translateY(-4px);
+}
+
+.blog-category-badge {
+  display: inline-block;
+  background: #0f7b46;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.blog-card h3 {
+  font-size: 1.3rem;
+  color: #181b18;
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.blog-excerpt {
+  color: #4a554a;
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.blog-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #d7decf;
+}
+
+.blog-date {
+  font-size: 0.85rem;
+  color: #4a554a;
+}
+
+.blog-link {
+  color: #0f7b46;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.blog-link:hover {
+  color: #ff6a00;
+}
+
+/* ========== Promotions Grid ========== */
+
+.promotions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.promo-card {
+  background: linear-gradient(135deg, #0f7b46 0%, #1f5a33 100%);
+  color: white;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.promo-card:hover {
+  border-color: #ffc857;
+  box-shadow: 0 12px 32px rgba(15, 123, 70, 0.2);
+  transform: translateY(-6px);
+}
+
+.promo-badge {
+  display: inline-block;
+  background: #ff6a00;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.promo-card h3 {
+  font-size: 1.4rem;
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.promo-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.promo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.promo-validity {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.btn-primary-small {
+  background: #ff6a00;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.btn-primary-small:hover {
+  background: #e55a00;
+}
+
+/* ========== Responsive ========== */
+
+@media (max-width: 900px) {
+  .page-container {
+    padding: 30px 16px;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .page-content {
+    padding: 30px;
+  }
+
+  .blog-grid,
+  .promotions-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+  }
+
+  .shipping-table {
+    font-size: 0.85rem;
+  }
+
+  .shipping-table th,
+  .shipping-table td {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-container {
+    padding: 20px 12px;
+  }
+
+  .page-header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+
+  .page-header p {
+    font-size: 0.95rem;
+  }
+
+  .page-content {
+    padding: 20px;
+  }
+
+  .guideline-content,
+  .policy-content {
+    gap: 24px;
+  }
+
+  .guideline-section h2,
+  .policy-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .guideline-section h3,
+  .policy-section h3 {
+    font-size: 1rem;
+  }
+
+  .blog-grid,
+  .promotions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-card,
+  .promo-card {
+    padding: 18px;
+  }
+
+  .shipping-table {
+    font-size: 0.75rem;
+  }
+
+  .shipping-table th,
+  .shipping-table td {
+    padding: 6px;
+  }
+}

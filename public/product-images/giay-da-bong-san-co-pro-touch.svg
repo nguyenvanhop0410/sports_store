@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="100" x2="1020" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0b1f3a"/>
+      <stop offset="1" stop-color="#143d6b"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(374 254) rotate(90) scale(420 420)">
+      <stop stop-color="#7fd1ff" stop-opacity="0.58"/>
+      <stop offset="1" stop-color="#7fd1ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="220" y1="190" x2="920" y2="960" gradientUnits="userSpaceOnUse">
+      <stop stop-color="rgba(255,255,255,0.17)"/>
+      <stop offset="1" stop-color="rgba(255,255,255,0.06)"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1200" rx="64" fill="url(#bg)"/>
+  <rect width="1200" height="1200" rx="64" fill="url(#glow)"/>
+  <circle cx="1006" cy="164" r="138" fill="#ff8f1f" opacity="0.12"/>
+  <circle cx="106" cy="980" r="170" fill="#7fd1ff" opacity="0.08"/>
+  <rect x="88" y="88" width="1024" height="1024" rx="48" fill="url(#panel)" stroke="rgba(255,255,255,0.12)"/>
+  <rect x="112" y="112" width="280" height="60" rx="30" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.18)"/>
+  <text x="146" y="151" fill="#ffffff" font-size="26" font-weight="700" font-family="Segoe UI, Arial, sans-serif">GIÀY • RUNNING SHOES</text>
+  <text x="112" y="1040" fill="#7fd1ff" font-size="34" font-weight="700" font-family="Segoe UI, Arial, sans-serif">KICKPRO</text>
+  <text x="112" y="1082" fill="rgba(255,255,255,0.82)" font-size="22" font-weight="500" font-family="Segoe UI, Arial, sans-serif">Visual description generated for this product</text>
+  
+      <path d="M270 680c70-10 118-56 171-56 27 0 55 13 95 38 32 20 64 34 121 39 22 2 41 15 41 37v32H214c-18 0-32-15-32-33 0-28 21-52 49-57l39-7Z" fill="#dff6ff" opacity="0.95"/>
+      <path d="M332 618c34 15 77 21 128 18 24-1 40 2 62 15l88 51" stroke="#ff8f1f" stroke-width="24" stroke-linecap="round" fill="none"/>
+      <path d="M420 598 502 590M450 636l72-4M484 670l64-2" stroke="#0b1f3a" stroke-width="10" stroke-linecap="round"/>
+    
+  <text x="112" y="872" fill="#ffffff" font-size="54" font-weight="800" font-family="Segoe UI, Arial, sans-serif">Giày Đá Bóng Sân Cỏ</text><text x="112" y="938" fill="#ffffff" font-size="54" font-weight="800" font-family="Segoe UI, Arial, sans-serif">Pro Touch</text>
+  <text x="112" y="996" fill="rgba(255,255,255,0.88)" font-size="28" font-weight="600" font-family="Segoe UI, Arial, sans-serif">Running shoes</text>
+</svg>

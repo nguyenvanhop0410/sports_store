@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="100" x2="1020" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#153126"/>
+      <stop offset="1" stop-color="#256347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(385 345) rotate(90) scale(420 420)">
+      <stop stop-color="#d9ffcf" stop-opacity="0.58"/>
+      <stop offset="1" stop-color="#d9ffcf" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="220" y1="190" x2="920" y2="960" gradientUnits="userSpaceOnUse">
+      <stop stop-color="rgba(255,255,255,0.17)"/>
+      <stop offset="1" stop-color="rgba(255,255,255,0.06)"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1200" rx="64" fill="url(#bg)"/>
+  <rect width="1200" height="1200" rx="64" fill="url(#glow)"/>
+  <circle cx="1006" cy="164" r="138" fill="#ffe66d" opacity="0.12"/>
+  <circle cx="106" cy="980" r="170" fill="#d9ffcf" opacity="0.08"/>
+  <rect x="88" y="88" width="1024" height="1024" rx="48" fill="url(#panel)" stroke="rgba(255,255,255,0.12)"/>
+  <rect x="112" y="112" width="364" height="60" rx="30" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.18)"/>
+  <text x="146" y="151" fill="#ffffff" font-size="26" font-weight="700" font-family="Segoe UI, Arial, sans-serif">PHỤ KIỆN • TRAINING GLOVES</text>
+  <text x="112" y="1040" fill="#d9ffcf" font-size="34" font-weight="700" font-family="Segoe UI, Arial, sans-serif">GYMGEAR</text>
+  <text x="112" y="1082" fill="rgba(255,255,255,0.82)" font-size="22" font-weight="500" font-family="Segoe UI, Arial, sans-serif">Visual description generated for this product</text>
+  
+      <path d="M388 742c-48-31-84-87-84-146V400c0-20 16-36 36-36s36 16 36 36v72h16V350c0-20 16-36 36-36s36 16 36 36v122h16V332c0-20 16-36 36-36s36 16 36 36v140h16V356c0-20 16-36 36-36s36 16 36 36v256c0 54-23 101-64 130H388Z" fill="#ffffff" opacity="0.96"/>
+    
+  <text x="112" y="872" fill="#ffffff" font-size="54" font-weight="800" font-family="Segoe UI, Arial, sans-serif">Găng Tay Gym GripMax</text><text x="112" y="938" fill="#ffffff" font-size="54" font-weight="800" font-family="Segoe UI, Arial, sans-serif">2.0</text>
+  <text x="112" y="996" fill="rgba(255,255,255,0.88)" font-size="28" font-weight="600" font-family="Segoe UI, Arial, sans-serif">Training gloves</text>
+</svg>
