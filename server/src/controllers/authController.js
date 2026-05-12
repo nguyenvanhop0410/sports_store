@@ -10,6 +10,8 @@ const sanitizeUser = (user) => ({
   createdAt: user.createdAt,
 });
 
+const allowedRoles = new Set(['admin', 'user']);
+
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
 
@@ -58,4 +60,37 @@ const getUsers = asyncHandler(async (req, res) => {
   res.json(users);
 });
 
-module.exports = { registerUser, loginUser, getMe, getUsers };
+const updateUserRole = asyncHandler(async (req, res) => {
+  const { role } = req.body;
+
+  if (!allowedRoles.has(role)) {
+    res.status(400);
+    throw new Error('Role must be admin or user');
+  }
+
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    res.status(404);
+    throw new Error('User not found');
+  }
+
+  if (user.role === 'admin' && role !== 'admin') {
+    const adminCount = await User.countDocuments({ role: 'admin' });
+
+    if (adminCount <= 1) {
+      res.status(400);
+      throw new Error('At least one admin account must remain active');
+    }
+  }
+
+  user.role = role;
+  const updatedUser = await user.save();
+
+  res.json({
+    message: 'User role updated',
+    user: sanitizeUser(updatedUser),
+  });
+});
+
+module.exports = { registerUser, loginUser, getMe, getUsers, updateUserRole };

@@ -8,6 +8,10 @@ const AdminOrdersPage = () => {
   const [orders, setOrders] = useState([]);
   const [stats, setStats] = useState(null);
   const [error, setError] = useState('');
+  const paymentLabels = {
+    COD: 'COD',
+    BANK_TRANSFER: 'Chuyển khoản mô phỏng',
+  };
 
   const loadData = async () => {
     const [ordersData, summaryData] = await Promise.all([
@@ -51,6 +55,7 @@ const AdminOrdersPage = () => {
             <tr>
               <th>Mã đơn</th>
               <th>Khách hàng</th>
+              <th>Phương thức</th>
               <th>Tổng tiền</th>
               <th>Trạng thái đơn</th>
               <th>Trạng thái TT</th>
@@ -66,6 +71,7 @@ const AdminOrdersPage = () => {
                   <br />
                   <small>{order.customerInfo?.email || order.user?.email}</small>
                 </td>
+                <td>{paymentLabels[order.paymentMethod] || order.paymentMethod}</td>
                 <td>{formatCurrency(order.totalAmount)}</td>
                 <td>
                   <span className="status">{order.orderStatus}</span>

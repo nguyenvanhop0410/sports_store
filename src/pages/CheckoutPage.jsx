@@ -4,11 +4,22 @@ import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import { apiRequest } from '../utils/api';
 import { formatCurrency } from '../utils/currency';
+import bankQrImage from '../../qr.png';
 
 const CheckoutPage = () => {
   const navigate = useNavigate();
   const { token, user } = useAuth();
   const { items, totalAmount, totalQuantity, clearCart } = useCart();
+  const paymentLabels = {
+    COD: 'Thanh toán khi nhận hàng (COD)',
+    BANK_TRANSFER: 'Chuyển khoản mô phỏng',
+  };
+  const bankTransferDetails = {
+    bankName: 'Ngân hàng: Vietcombank',
+    accountName: 'Chủ tài khoản: CÔNG TY SPORTS ZONE',
+    accountNumber: 'Số tài khoản: 0123456789',
+    transferContent: `CK ${user?.name || 'HO TEN'} ${totalQuantity}SP`,
+  };
 
   const [form, setForm] = useState({
     name: user?.name || '',
@@ -100,13 +111,16 @@ const CheckoutPage = () => {
           onChange={(e) => setForm((prev) => ({ ...prev, note: e.target.value }))}
         />
 
-        <select
-          value={form.paymentMethod}
-          onChange={(e) => setForm((prev) => ({ ...prev, paymentMethod: e.target.value }))}
-        >
-          <option value="COD">Thanh toán khi nhận hàng (COD)</option>
-          <option value="BANK_TRANSFER">Chuyển khoản mô phỏng</option>
-        </select>
+        <label>
+          <span>Phương thức thanh toán</span>
+          <select
+            value={form.paymentMethod}
+            onChange={(e) => setForm((prev) => ({ ...prev, paymentMethod: e.target.value }))}
+          >
+            <option value="COD">Thanh toán khi nhận hàng (COD)</option>
+            <option value="BANK_TRANSFER">Chuyển khoản mô phỏng</option>
+          </select>
+        </label>
 
         {error && <p className="error">{error}</p>}
         {success && <p className="success">{success}</p>}
@@ -127,6 +141,31 @@ const CheckoutPage = () => {
         <p>
           <strong>Tổng thành tiền:</strong> {formatCurrency(totalAmount)}
         </p>
+        <p>
+          <strong>Thanh toán:</strong> {paymentLabels[form.paymentMethod]}
+        </p>
+        {form.paymentMethod === 'BANK_TRANSFER' && (
+          <div className="transfer-info">
+            <div className="mock-qr-card">
+              <div className="mock-qr" aria-label="QR chuyển khoản">
+                <img className="mock-qr-image" src={bankQrImage} alt="QR chuyển khoản" />
+              </div>
+
+              <div className="transfer-meta">
+                <h3>Thông tin chuyển khoản</h3>
+                <p>{bankTransferDetails.bankName}</p>
+                <p>{bankTransferDetails.accountName}</p>
+                <p>{bankTransferDetails.accountNumber}</p>
+                <p className="transfer-content">
+                  <strong>Nội dung:</strong> {bankTransferDetails.transferContent}
+                </p>
+                <small>
+                  Đây là thông tin mô phỏng để demo. Sau khi đặt hàng, đơn sẽ ở trạng thái thanh toán pending.
+                </small>
+              </div>
+            </div>
+          </div>
+        )}
         <small>
           Thanh toán chuyển khoản là mô phỏng, hệ thống sẽ tạo đơn hàng với trạng thái thanh toán pending.
         </small>

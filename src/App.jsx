@@ -11,6 +11,7 @@ import RegisterPage from './pages/RegisterPage';
 import MyOrdersPage from './pages/MyOrdersPage';
 import AdminProductsPage from './pages/AdminProductsPage';
 import AdminOrdersPage from './pages/AdminOrdersPage';
+import AdminUsersPage from './pages/AdminUsersPage';
 import PromoPage from './pages/PromoPage';
 import BlogPage from './pages/BlogPage';
 import GuidelinePage from './pages/GuidelinePage';
@@ -57,6 +58,14 @@ function App() {
           element={
             <ProtectedRoute adminOnly>
               <AdminOrdersPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/users"
+          element={
+            <ProtectedRoute adminOnly>
+              <AdminUsersPage />
             </ProtectedRoute>
           }
         />

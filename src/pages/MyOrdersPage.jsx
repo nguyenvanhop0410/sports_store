@@ -7,6 +7,10 @@ const MyOrdersPage = () => {
   const { token } = useAuth();
   const [orders, setOrders] = useState([]);
   const [error, setError] = useState('');
+  const paymentLabels = {
+    COD: 'COD',
+    BANK_TRANSFER: 'Chuyển khoản mô phỏng',
+  };
 
   useEffect(() => {
     const loadOrders = async () => {
@@ -33,6 +37,7 @@ const MyOrdersPage = () => {
               <tr>
                 <th>Mã đơn</th>
                 <th>Ngày</th>
+                <th>Phương thức</th>
                 <th>Tổng tiền</th>
                 <th>Trạng thái đơn</th>
                 <th>Thanh toán</th>
@@ -43,6 +48,7 @@ const MyOrdersPage = () => {
                 <tr key={order._id}>
                   <td>{order._id.slice(-8).toUpperCase()}</td>
                   <td>{new Date(order.createdAt).toLocaleString('vi-VN')}</td>
+                  <td>{paymentLabels[order.paymentMethod] || order.paymentMethod}</td>
                   <td>{formatCurrency(order.totalAmount)}</td>
                   <td>
                     <span className="status">{order.orderStatus}</span>

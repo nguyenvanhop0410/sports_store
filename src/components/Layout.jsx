@@ -84,6 +84,19 @@ const Layout = () => {
                 <button className="action-link" onClick={handleLogout}>
                   Đăng xuất
                 </button>
+              {isAdmin && (
+                <div className="admin-nav">
+                  <NavLink className="admin-nav-link" to="/admin/products">
+                    Sản phẩm
+                  </NavLink>
+                  <NavLink className="admin-nav-link" to="/admin/orders">
+                    Đơn hàng
+                  </NavLink>
+                  <NavLink className="admin-nav-link" to="/admin/users">
+                    Người dùng
+                  </NavLink>
+                </div>
+              )}
               </>
             )}
           </div>
